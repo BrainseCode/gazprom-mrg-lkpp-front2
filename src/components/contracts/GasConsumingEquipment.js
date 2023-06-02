@@ -204,8 +204,9 @@ export default function GasConsumingEquipment() {
                                                     'justify-left',
                                                     'text-left',
                                                     'text-gray-900', 
-                                                    styles.gazpromHead, 
-                                                    'mr-2'
+                                                    styles.gazpromTabHead, 
+                                                    'mr-2',
+                                                    'rounded'
                                                 )}>
                         <span className="ml-1 flex h-7 items-center">
                           {open ? (
