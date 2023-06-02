@@ -22,9 +22,9 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import NavLink from '@/components/NavLink'
 
-const username = 'ООО "Пропеллер"'
+const username = 'ООО "Ветер"'
 
-const roleUser = 1 //1 администратор 2 менеджер 3 пользователи
+const roleUser = 3 //1 администратор 2 менеджер 3 пользователи
 const userId = 324324
 
 let navigation = [

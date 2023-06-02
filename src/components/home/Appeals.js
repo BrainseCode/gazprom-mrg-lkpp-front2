@@ -149,7 +149,7 @@ export default function Appeals() {
                         </table>
                     </div>
                 </div>
-                <div className="flex justify-end mt-2">
+                <div className="flex justify-end mt-2 mr-5">
                     <div className="mr-2">
                         <button
                             className={classNames(
