@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '@/components/technicalSupport/technicalSupport.module.css'
 import { Disclosure } from '@headlessui/react'
-import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline'
+import { ChevronRightIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 import Head from 'next/head'
 import AppLayout from '@/components/Layouts/AppLayout'
 import classNames from 'classnames'
@@ -79,29 +79,39 @@ export default function TechnicalSupport() {
                                             {({ open }) => (
                                                 <>
                                                     <dt>
-                                                        <Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900 gazprom-head ml-2 mr-2">
-                                                            <span className="text-base font-semibold leading-7 ml-2">
-                                                                {faq.question}
-                                                            </span>
-                                                            <span className="ml-6 flex h-7 items-center mr-5">
+                                                        <Disclosure.Button className={classNames(
+                                                    'flex',
+                                                    'w-full',
+                                                    'items-start',
+                                                    'justify-left',
+                                                    'text-left',
+                                                    'text-gray-900', 
+                                                    styles.gazpromTabHead,
+                                                    'mr-2',
+                                                    'rounded'
+                                                )}>
+                                                            <span className="ml-1 flex h-7 items-center">
                                                                 {open ? (
-                                                                    <PlusSmallIcon
+                                                                    <ChevronDownIcon
                                                                         className="h-6 w-6"
                                                                         aria-hidden="true"
                                                                     />
                                                                 ) : (
-                                                                    <MinusSmallIcon
+                                                                    <ChevronRightIcon
                                                                         className="h-6 w-6"
                                                                         aria-hidden="true"
                                                                     />
                                                                 )}
+                                                            </span>
+                                                            <span className="text-base font-semibold leading-7 ml-2">
+                                                                {faq.question}
                                                             </span>
                                                         </Disclosure.Button>
                                                     </dt>
                                                     <Disclosure.Panel
                                                         as="dd"
                                                         className="mt-2 pr-12">
-                                                        <p className="text-base leading-7 text-gray-600 ml-5">
+                                                        <p className="text-base font-semibold leading-7 ml-1">
                                                             {faq.answer}
                                                         </p>
                                                     </Disclosure.Panel>
