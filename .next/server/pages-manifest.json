@@ -2,7 +2,11 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/technical-support": "pages/technical-support.js",
+  "/calorie-archive": "pages/calorie-archive.js",
+  "/calculation-status": "pages/calculation-status.js",
   "/contracts": "pages/contracts.js",
+  "/home": "pages/home.js",
   "/user-profile": "pages/user-profile.js",
-  "/home": "pages/home.js"
+  "/settings": "pages/settings.js"
 }
