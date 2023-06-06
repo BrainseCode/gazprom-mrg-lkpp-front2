@@ -12,6 +12,8 @@ export default function Home() {
     const { user } = useAuth()
     const [profile, setProfile] = useState([])
     const [contracts, setContracts] = useState([])
+    const [measuringComplexes, setMeasuringComplexes] = useState([])
+    const [requests, setRequests] = useState([])
     async function initialProfileState() {
         const response = await axios.get(`api/user-profiles/${user?.id}`)
         const newProfile = response.data.data
@@ -21,12 +23,25 @@ export default function Home() {
         const response = await axios.get(`/api/users/${user.id}/contracts`)
         const newContracts = response.data.data
         setContracts(newContracts)
+        let newMeasuringComplexes = []
+        for (let contract of newContracts){
+            const response = await axios.get(`api/measuring-complexes/${contract?.id}`)
+            const newMeasuringComplex = response.data.data
+            newMeasuringComplexes.push(newMeasuringComplex)
+        }
+        setMeasuringComplexes(newMeasuringComplexes)
     }
 
+    async function initialRequestsState() {
+        const response = await axios.get(`api/universal-requests/`)
+        const newRequests = response.data.data
+        setRequests(newRequests)
+    }
     useEffect(() => {
         if (user) {
             initialProfileState()
             initiaContractslState()
+            initialRequestsState()
         }
         //вот тут мы их вызываем
         //так же тут можно записывать это все в global state (ReduxToolkit)
@@ -48,10 +63,10 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="col-span-12 2xl:col-span-12 pt-2">
-                    <MeasuringComplexes />
+                    <MeasuringComplexes measuringComplexes={measuringComplexes}/>
                 </div>
                 <div className="col-span-12 2xl:col-span-12 pt-2">
-                    <Appeals />
+                    <Appeals requests={requests}/>
                 </div>
             </div>
         </AppLayout>

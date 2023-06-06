@@ -3,7 +3,7 @@ import './MeasuringComplexes.module.css'
 import classNames from 'classnames'
 import styles from '@/components/home/TableProfile.module.css'
 
-export default function MeasuringComplexes() {
+export default function MeasuringComplexes({measuringComplexes}) {
     let complexes = [
         {
             id: 1,
@@ -114,22 +114,22 @@ export default function MeasuringComplexes() {
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
-                                {complexes.map(complexe => (
-                                    <tr key={complexe.id}>
+                                {measuringComplexes.map(complexe => (
+                                    <tr key={complexe?.id}>
                                         <td className="px-6 text-left whitespace-nowrap text-sm font-medium text-gray-900">
-                                            {complexe.adress}
+                                            {complexe?.address}
                                         </td>
                                         <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {complexe.device}
+                                            {complexe?.pribor}
                                         </td>
                                         <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {complexe.contract}
+                                            {complexe?.number}
                                         </td>
                                         <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {complexe.volume}
+                                            {complexe?.value}
                                         </td>
                                         <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {complexe.plan}
+                                            {complexe?.plan}
                                         </td>
                                         <td className="px-6 text-right whitespace-nowrap text-sm font-medium">
                                             <button

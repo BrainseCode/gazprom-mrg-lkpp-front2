@@ -4,7 +4,6 @@ import classNames from 'classnames'
 import styles from './TableProfile.module.css'
 
 export default function TableProfile({user, profile}) {
-    console.log(profile)
     return (
         <div
             className={classNames(

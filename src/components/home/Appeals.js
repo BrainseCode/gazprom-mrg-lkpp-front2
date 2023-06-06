@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './Appeals.module.css'
 import classNames from 'classnames'
 
-export default function Appeals() {
+export default function Appeals({requests}) {
     let complexes = [
         {
             id: 1,
@@ -114,22 +114,22 @@ export default function Appeals() {
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
-                                {complexes.map(complexe => (
-                                    <tr key={complexe.id}>
+                                {requests.map(request => (
+                                    <tr key={request.id}>
                                         <td className="px-6 text-left whitespace-nowrap text-sm font-medium text-gray-900">
-                                            {complexe.address}
+                                            {request.address}
                                         </td>
                                         <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {complexe.device}
+                                            {request.device}
                                         </td>
                                         <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {complexe.contract}
+                                            {request.contract}
                                         </td>
                                         <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {complexe.volume}
+                                            {request.volume}
                                         </td>
                                         <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {complexe.plan}
+                                            {request.plan}
                                         </td>
                                         <td className="px-6 text-right whitespace-nowrap text-sm font-medium">
                                             <button

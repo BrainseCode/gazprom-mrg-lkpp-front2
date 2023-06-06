@@ -4,9 +4,6 @@ import classNames from 'classnames'
 import styles from '@/components/home/TableProfile.module.css'
 import axios from '@/lib/axios'
 export default function TableContracts({ contracts }) {
-    // const ctr = getStaticProps()
-    console.log(contracts)
-    // console.log(ctr[Promise])
     let prof = [
         {
             id: 1,
