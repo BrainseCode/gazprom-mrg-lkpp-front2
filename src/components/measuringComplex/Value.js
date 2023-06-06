@@ -2,8 +2,22 @@
 import styles from './value.module.css'
 import dynamic from 'next/dynamic'
 import classNames from 'classnames'
+import React from "react";
 
-export default function Value() {
+export default function Value({indications}) {
+    console.log(indications)
+    let categoriesDate = []
+    let dataPlan = []
+    let dataVolume = []
+
+    if(indications) {
+        for (const item of indications) {
+            categoriesDate.push(item?.date)
+            dataPlan.push(item?.plan)
+            dataVolume.push(item?.volume)
+        }
+    }
+
     const ReactApexChart = dynamic(() => import('react-apexcharts'), {
         ssr: false,
     })
@@ -20,15 +34,7 @@ export default function Value() {
         },
         xaxis: {
             type: 'datetime',
-            categories: [
-                '2018-09-19T00:00:00.000Z',
-                '2018-09-19T01:30:00.000Z',
-                '2018-09-19T02:30:00.000Z',
-                '2018-09-19T03:30:00.000Z',
-                '2018-09-19T04:30:00.000Z',
-                '2018-09-19T05:30:00.000Z',
-                '2018-09-19T06:30:00.000Z',
-            ],
+            categories: categoriesDate,
         },
         tooltip: {
             x: {
@@ -39,12 +45,12 @@ export default function Value() {
 
     const series = [
         {
-            name: 'series1',
-            data: [31, 40, 28, 51, 42, 109, 100],
+            name: 'Договорной объём',
+            data: dataPlan,
         },
         {
-            name: 'series2',
-            data: [11, 32, 45, 32, 34, 52, 41],
+            name: 'Фактический объём',
+            data: dataVolume,
         },
     ]
 
@@ -228,56 +234,64 @@ export default function Value() {
                 </div>
                 <div className="mt-5 mb-5">
                     <div className={classNames(styles.scrollTable)}>
-                        <table className="min-w-full divide-y divide-gray-200 table-fixed">
+                        <table className="min-w-full divide-y divide-gray-200">
                             <thead>
-                                <tr>
-                                    <th
-                                        scope="col"
-                                        className="px-6 py-1 text-left text-xg font-bold">
-                                        Дата
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        className="px-6 py-1 text-center text-xg font-bold">
-                                        Источник
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        className="px-6 py-1 text-center text-xg font-bold">
-                                        Объём м3
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        className="px-6 py-1 text-center text-xg font-bold">
-                                        План м3
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        className="px-6 py-1 text-right text-xg font-bold">
-                                        Статус
-                                    </th>
-                                </tr>
+                            <tr>
+                                <th
+                                    scope="col"
+                                    className="px-6 py-2 text-left text-xg font-bold">
+                                    Дата
+                                </th>
+                                <th
+                                    scope="col"
+                                    className="px-6 py-2 text-center text-xg font-bold">
+                                    Договорной объём
+                                </th>
+                                <th
+                                    scope="col"
+                                    className="px-6 py-2 text-center text-xg font-bold">
+                                    Максимальный договорной объём
+                                </th>
+                                <th
+                                    scope="col"
+                                    className="px-6 py-2 text-center text-xg font-bold">
+                                    Фактический объём
+                                </th>
+                                <th
+                                    scope="col"
+                                    className="px-6 py-2 text-center text-xg font-bold">
+                                    Перерасход газа
+                                </th>
+                                <th
+                                    scope="col"
+                                    className="px-6 py-2 text-center text-xg font-bold">
+                                    Статус
+                                </th>
+                            </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
-                                {complexes.map(complexe => (
-                                    <tr key={complexe.id}>
-                                        <td className="px-6 pt-4 pb-4 text-left whitespace-nowrap text-sm font-medium text-gray-900">
-                                            {complexe.date}
-                                        </td>
-                                        <td className="px-6 pt-4 pb-4 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {complexe.source}
-                                        </td>
-                                        <td className="px-6 pt-4 pb-4 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {complexe.volume}
-                                        </td>
-                                        <td className="px-6 pt-4 pb-4 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {complexe.plan}
-                                        </td>
-                                        <td className="px-6 pt-4 pb-4 text-right whitespace-nowrap text-sm text-gray-500">
-                                            {complexe.status}
-                                        </td>
-                                    </tr>
-                                ))}
+                            {indications.map(indication => (
+                                <tr key={indication?.id}>
+                                    <td className="px-6 whitespace-nowrap pt-4 pb-4 text-left text-sm font-medium text-gray-900">
+                                        {indication?.date.substring(0, 10)}
+                                    </td>
+                                    <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm text-gray-500">
+                                        {indication?.plan}
+                                    </td>
+                                    <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm text-gray-500">
+                                        {indication?.plan}
+                                    </td>
+                                    <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm font-medium text-gray-900">
+                                        {indication?.volume}
+                                    </td>
+                                    <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm font-medium text-gray-900">
+                                        {(indication?.volume - indication?.plan > 0)?indication?.volume - indication?.plan:0}
+                                    </td>
+                                    <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm font-medium text-gray-900">
+                                        {indication?.status}
+                                    </td>
+                                </tr>
+                            ))}
                             </tbody>
                         </table>
                     </div>

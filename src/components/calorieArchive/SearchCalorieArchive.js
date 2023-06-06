@@ -5,7 +5,6 @@ import classNames from 'classnames'
 
 export default function SearchCalorieArchive({contracts}) {
     const archivData = contracts[0]?.calorieArchives
-    console.log(archivData)
     let categoriesDate = []
     let dataCaloric = []
 

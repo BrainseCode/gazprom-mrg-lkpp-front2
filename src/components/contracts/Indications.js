@@ -150,6 +150,11 @@ export default function Indications({indications}) {
                                         className="px-6 py-2 text-center text-xg font-bold">
                                         Перерасход газа
                                     </th>
+                                    <th
+                                        scope="col"
+                                        className="px-6 py-2 text-center text-xg font-bold">
+                                        Статус
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
@@ -169,6 +174,9 @@ export default function Indications({indications}) {
                                         </td>
                                         <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm font-medium text-gray-900">
                                             {(indication?.volume - indication?.plan > 0)?indication?.volume - indication?.plan:0}
+                                        </td>
+                                        <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm font-medium text-gray-900">
+                                            {indication?.status}
                                         </td>
                                     </tr>
                                 ))}

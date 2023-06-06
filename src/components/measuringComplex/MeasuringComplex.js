@@ -2,7 +2,14 @@ import React from 'react'
 import styles from './measuringComplex.module.css'
 import classNames from 'classnames'
 
-export default function MeasuringComplex() {
+export default function MeasuringComplex({contracts}) {
+    const measuringComplexes = []
+    if(contracts) {
+        for (const contract of contracts) {
+            measuringComplexes.push(contract?.measuringComplex)
+        }
+    }
+
     let complexes = [
         {
             id: 1,
@@ -114,19 +121,19 @@ export default function MeasuringComplex() {
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
-                                {complexes.map(complexe => (
+                                {measuringComplexes.map(complexe => (
                                     <tr key={complexe.id}>
                                         <td className="px-6 py-4 text-left whitespace-nowrap text-sm text-gray-900">
                                             {complexe.address}
                                         </td>
                                         <td className="px-6 py-4 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {complexe.device}
+                                            {complexe.pribor}
                                         </td>
                                         <td className="px-6 py-4 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {complexe.contract}
+                                            {complexe.number}
                                         </td>
                                         <td className="px-6 py-4 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {complexe.volume}
+                                            {complexe.value}
                                         </td>
                                         <td className="px-6 py-4 text-right whitespace-nowrap text-sm text-gray-500">
                                             {complexe.plan}

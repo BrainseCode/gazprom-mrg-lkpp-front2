@@ -25,10 +25,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/calorie-archive": [
+    "/measuring-complex": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/calorie-archive.js"
+      "static/chunks/pages/measuring-complex.js"
     ]
   },
   "ampFirstPages": []
