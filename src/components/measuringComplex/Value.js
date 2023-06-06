@@ -5,7 +5,6 @@ import classNames from 'classnames'
 import React from "react";
 
 export default function Value({indications}) {
-    console.log(indications)
     let categoriesDate = []
     let dataPlan = []
     let dataVolume = []

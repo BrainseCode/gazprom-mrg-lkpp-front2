@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './generalInfo.module.css'
 import classNames from 'classnames'
 
-export default function GeneralInfo() {
+export default function GeneralInfo({meter, pressure, thermomether, calculator, powerUnit}) {
     let complexes = {
         meterName: 'Крутой счётчик',
         meterNumber: 'Т64',
@@ -84,7 +84,7 @@ export default function GeneralInfo() {
                                         name="name"
                                         id="name"
                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                        defaultValue={complexes.meterName}
+                                        defaultValue={meter?.name}
                                     />
                                 </div>
                             </div>
@@ -100,7 +100,7 @@ export default function GeneralInfo() {
                                         name="number"
                                         id="number"
                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                        defaultValue={complexes.meterNumber}
+                                        defaultValue={meter?.number}
                                     />
                                 </div>
                             </div>
@@ -116,7 +116,7 @@ export default function GeneralInfo() {
                                         name="type"
                                         id="type"
                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                        defaultValue={complexes.meterType}
+                                        defaultValue={meter?.type}
                                     />
                                 </div>
                             </div>
@@ -132,7 +132,7 @@ export default function GeneralInfo() {
                                         name="date"
                                         id="date"
                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                        defaultValue={complexes.meterDate}
+                                        defaultValue={meter?.verification_date?.substring(0, 10)}
                                     />
                                 </div>
                             </div>
@@ -168,7 +168,7 @@ export default function GeneralInfo() {
                                         name="name"
                                         id="name"
                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                        defaultValue={complexes.manometerName}
+                                        defaultValue={pressure?.name}
                                     />
                                 </div>
                             </div>
@@ -184,7 +184,7 @@ export default function GeneralInfo() {
                                         name="number"
                                         id="number"
                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                        defaultValue={complexes.manometerNumber}
+                                        defaultValue={pressure?.number}
                                     />
                                 </div>
                             </div>
@@ -200,7 +200,7 @@ export default function GeneralInfo() {
                                         name="type"
                                         id="type"
                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                        defaultValue={complexes.manometerType}
+                                        defaultValue={pressure?.type}
                                     />
                                 </div>
                             </div>
@@ -216,7 +216,7 @@ export default function GeneralInfo() {
                                         name="date"
                                         id="date"
                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                        defaultValue={complexes.manometerDate}
+                                        defaultValue={pressure?.verification_date?.substring(0, 10)}
                                     />
                                 </div>
                             </div>
@@ -252,7 +252,7 @@ export default function GeneralInfo() {
                                         name="name"
                                         id="name"
                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                        defaultValue={complexes.thermometerName}
+                                        defaultValue={thermomether?.name}
                                     />
                                 </div>
                             </div>
@@ -269,7 +269,7 @@ export default function GeneralInfo() {
                                         id="number"
                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                                         defaultValue={
-                                            complexes.thermometerNumber
+                                            thermomether?.number
                                         }
                                     />
                                 </div>
@@ -286,7 +286,7 @@ export default function GeneralInfo() {
                                         name="type"
                                         id="type"
                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                        defaultValue={complexes.thermometerType}
+                                        defaultValue={thermomether?.type}
                                     />
                                 </div>
                             </div>
@@ -302,7 +302,7 @@ export default function GeneralInfo() {
                                         name="date"
                                         id="date"
                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                        defaultValue={complexes.thermometerDate}
+                                        defaultValue={thermomether?.verification_date?.substring(0, 10)}
                                     />
                                 </div>
                             </div>
@@ -338,7 +338,7 @@ export default function GeneralInfo() {
                                         name="name"
                                         id="name"
                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                        defaultValue={complexes.calculatorName}
+                                        defaultValue={calculator?.name}
                                     />
                                 </div>
                             </div>
@@ -355,7 +355,7 @@ export default function GeneralInfo() {
                                         id="number"
                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                                         defaultValue={
-                                            complexes.calculatorNumber
+                                            calculator?.number
                                         }
                                     />
                                 </div>
@@ -372,7 +372,7 @@ export default function GeneralInfo() {
                                         name="type"
                                         id="type"
                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                        defaultValue={complexes.calculatorType}
+                                        defaultValue={calculator?.type}
                                     />
                                 </div>
                             </div>
@@ -388,7 +388,7 @@ export default function GeneralInfo() {
                                         name="date"
                                         id="date"
                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                        defaultValue={complexes.calculatorDate}
+                                        defaultValue={calculator?.verification_date?.substring(0, 10)}
                                     />
                                 </div>
                             </div>
@@ -424,7 +424,7 @@ export default function GeneralInfo() {
                                         name="name"
                                         id="name"
                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                        defaultValue={complexes.powerName}
+                                        defaultValue={powerUnit?.name}
                                     />
                                 </div>
                             </div>
@@ -440,7 +440,7 @@ export default function GeneralInfo() {
                                         name="number"
                                         id="number"
                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                        defaultValue={complexes.powerNumber}
+                                        defaultValue={powerUnit?.number}
                                     />
                                 </div>
                             </div>
@@ -456,7 +456,7 @@ export default function GeneralInfo() {
                                         name="type"
                                         id="type"
                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                        defaultValue={complexes.powerType}
+                                        defaultValue={powerUnit?.type}
                                     />
                                 </div>
                             </div>
@@ -472,7 +472,7 @@ export default function GeneralInfo() {
                                         name="date"
                                         id="date"
                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                        defaultValue={complexes.powerDate}
+                                        defaultValue={powerUnit?.verification_date?.substring(0, 10)}
                                     />
                                 </div>
                             </div>
