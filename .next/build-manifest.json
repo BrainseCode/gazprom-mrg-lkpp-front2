@@ -29,11 +29,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/calculation-status.js"
-    ],
-    "/user-applications": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/user-applications.js"
     ]
   },
   "ampFirstPages": []

@@ -2,7 +2,8 @@ import React from 'react'
 import styles from './Calculation.module.css'
 import classNames from 'classnames'
 
-export default function Calculation() {
+export default function Calculation({contracts}) {
+    console.log(contracts[0]?.payGazDelivereds)
     let count = {
         summ: '6 940.77 руб',
         table: [
@@ -60,18 +61,18 @@ export default function Calculation() {
                                 <th
                                     scope="col"
                                     className="px-6 py-2 text-right text-xg font-bold">
-                                    {count.summ}
+                                    {contracts[0]?.payTotals[0].pay_delivered} руб
                                 </th>
                             </tr>
                         </thead>
                         <tbody className="bg-white divide-y divide-gray-200">
-                            {count.table.map(cou => (
-                                <tr key={cou.id}>
+                            {contracts[0]?.payGazDelivereds?.map(payGazDelivered => (
+                                <tr key={payGazDelivered.id}>
                                     <td className="px-6 text-left whitespace-nowrap text-sm font-medium text-gray-900">
-                                        {cou.date}
+                                        Дата {payGazDelivered.date.substring(0, 10)}
                                     </td>
                                     <td className="px-6 text-right whitespace-nowrap text-sm text-gray-500">
-                                        {cou.money}
+                                        {payGazDelivered.summ} руб
                                     </td>
                                 </tr>
                             ))}
@@ -91,18 +92,18 @@ export default function Calculation() {
                                 <th
                                     scope="col"
                                     className="px-6 py-2 text-right text-xg font-bold">
-                                    {count.planSumm}
+                                    {contracts[0]?.payTotals[0].pay_planned} руб
                                 </th>
                             </tr>
                         </thead>
                         <tbody className="bg-white divide-y divide-gray-200">
-                            {count.commitments.map(cou => (
-                                <tr key={cou.id}>
+                            {contracts[0]?.payGazPlanneds?.map(payGazPlanned => (
+                                <tr key={payGazPlanned.id}>
                                     <td className="px-6 text-left whitespace-nowrap text-sm font-medium text-gray-900">
-                                        {cou.text}
+                                        {payGazPlanned.Percent}% плановой стоимости
                                     </td>
                                     <td className="px-6 text-right whitespace-nowrap text-sm text-gray-500">
-                                        {cou.summ}
+                                        {payGazPlanned.summ} руб
                                     </td>
                                 </tr>
                             ))}
@@ -121,18 +122,18 @@ export default function Calculation() {
                                 <th
                                     scope="col"
                                     className="px-6 py-2 text-right text-xg font-bold">
-                                    {count.summvdgo}
+                                    {contracts[0]?.payTotals[0].pay_tovdgo} руб
                                 </th>
                             </tr>
                         </thead>
                         <tbody className="bg-white divide-y divide-gray-200">
-                            {count.tablevdgo.map(cou => (
-                                <tr key={cou.id}>
+                        {contracts[0]?.payTovdgos?.map(payTovdgo => (
+                                <tr key={payTovdgo.id}>
                                     <td className="px-6 text-left whitespace-nowrap text-sm font-medium text-gray-900">
-                                        {cou.date}
+                                        Дата {payTovdgo.date.substring(0, 10)}
                                     </td>
                                     <td className="px-6 text-right whitespace-nowrap text-sm text-gray-500">
-                                        {cou.money}
+                                        {payTovdgo.summ} руб
                                     </td>
                                 </tr>
                             ))}
@@ -151,7 +152,7 @@ export default function Calculation() {
                                 <th
                                     scope="col"
                                     className="px-6 py-2 text-right text-xg font-bold">
-                                    {count.total}
+                                    {contracts[0]?.payTotals[0].total} руб
                                 </th>
                             </tr>
                             <tr>
@@ -163,7 +164,7 @@ export default function Calculation() {
                                 <th
                                     scope="col"
                                     className="px-6 py-2 text-right text-xg font-bold">
-                                    {count.nds}
+                                    {contracts[0]?.payTotals[0].total_nds} руб
                                 </th>
                             </tr>
                         </thead>
