@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './indications.module.css'
 import classNames from 'classnames'
 
-export default function Indications() {
+export default function Indications({indications}) {
     let elem = [
         {
             id: 1,
@@ -153,22 +153,22 @@ export default function Indications() {
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
-                                {elem.map(el => (
-                                    <tr key={el.id}>
+                                {indications.map(indication => (
+                                    <tr key={indication?.id}>
                                         <td className="px-6 whitespace-nowrap pt-4 pb-4 text-left text-sm font-medium text-gray-900">
-                                            {el.date}
+                                            {indication?.date.substring(0, 10)}
                                         </td>
                                         <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm text-gray-500">
-                                            {el.day}
+                                            {indication?.plan}
                                         </td>
                                         <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm text-gray-500">
-                                            {el.maxday}
+                                            {indication?.plan}
                                         </td>
                                         <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm font-medium text-gray-900">
-                                            {el.factday}
+                                            {indication?.volume}
                                         </td>
                                         <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm font-medium text-gray-900">
-                                            {el.overspending}
+                                            {(indication?.volume - indication?.plan > 0)?indication?.volume - indication?.plan:0}
                                         </td>
                                     </tr>
                                 ))}

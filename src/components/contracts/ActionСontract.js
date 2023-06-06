@@ -39,6 +39,7 @@ export default function ActionContract({contracts}) {
                             id="regis"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                             placeholder=""
+                            value={contract?.registration_date.substring(0, 10)}
                         />
                     </div>
                 </div>
@@ -72,6 +73,7 @@ export default function ActionContract({contracts}) {
                             id="stop"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                             placeholder=""
+                            value={contract?.end_date.substring(0, 10)}
                         />
                     </div>
                 </div>

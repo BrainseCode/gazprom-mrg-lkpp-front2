@@ -114,7 +114,7 @@ function TableContracts({contracts}) {
                                             {contract.status}
                                         </td>
                                         <td className="px-6 whitespace-nowrap text-center text-sm text-gray-500">
-                                            {contract.debt}
+                                            {contract.arrears}
                                         </td>
                                         <td className="px-6 whitespace-nowrap text-right text-sm font-medium">
                                             <button

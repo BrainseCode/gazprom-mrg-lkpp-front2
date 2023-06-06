@@ -2,7 +2,8 @@ import React from 'react'
 import styles from './informationСontract.module.css'
 import classNames from 'classnames'
 
-export default function InformationContract() {
+export default function InformationContract({contracts}) {
+    const contract = contracts[0]
     return (
         <div
             className={classNames(
@@ -39,6 +40,7 @@ export default function InformationContract() {
                             id="number"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                             placeholder=""
+                            value={contract?.number}
                         />
                     </div>
                 </div>
@@ -55,6 +57,7 @@ export default function InformationContract() {
                             id="name"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                             placeholder=""
+                            value={contract?.name}
                         />
                     </div>
                 </div>
@@ -71,6 +74,7 @@ export default function InformationContract() {
                             id="view"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                             placeholder=""
+                            value={contract?.type}
                         />
                     </div>
                 </div>
@@ -87,6 +91,7 @@ export default function InformationContract() {
                             id="hour"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md mb-5"
                             placeholder=""
+                            value={contract?.reporting_hour}
                         />
                     </div>
                 </div>

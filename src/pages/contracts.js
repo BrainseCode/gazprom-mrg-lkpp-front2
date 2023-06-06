@@ -16,21 +16,30 @@ export default function Contracts() {
     const { user } = useAuth()
     const [contracts, setContracts] = useState([])
     const [measuringComplexes, setMeasuringComplexes] = useState([])
+    const [indications, setIndications] = useState([])
+
     async function initiaContractslState() {
         const response = await axios.get(`/api/users/${user.id}/contracts`)
         const newContracts = response.data.data
         setContracts(newContracts)
         let newMeasuringComplexes = []
         for (let contract of newContracts){
-            const response = await axios.get(`api/measuring-complexes/${contract?.id}`)
+            const response = await axios.get(`/api/measuring-complexes/${contract?.id}`)
             const newMeasuringComplex = response.data.data
             newMeasuringComplexes.push(newMeasuringComplex)
         }
         setMeasuringComplexes(newMeasuringComplexes)
     }
+    async function initialIndicationsState() {
+        const response = await axios.get(`/api/indications`)
+        const newindications = response.data.data
+        setIndications(newindications)
+    }
+
     useEffect(() => {
         if (user) {
             initiaContractslState()
+            initialIndicationsState()
         }
         //вот тут мы их вызываем
         //так же тут можно записывать это все в global state (ReduxToolkit)
@@ -47,7 +56,7 @@ export default function Contracts() {
                 </div>
                 <div className="grid grid-cols-12 gap-6 pt-2">
                     <div className="col-span-12 2xl:col-span-6">
-                        <InformationContract />
+                        <InformationContract contracts={contracts}/>
                     </div>
                     <div className="col-span-12 2xl:col-span-6">
                         <ActionContract contracts={contracts}/>
@@ -60,10 +69,10 @@ export default function Contracts() {
                     <SeparationGazEquipment />
                 </div>
                 <div className="col-span-12 2xl:col-span-12 pt-2">
-                    <Indications />
+                    <Indications indications={indications}/>
                 </div>
                 <div className="col-span-12 2xl:col-span-12 pt-2">
-                    <MeasuringComplex />
+                    <MeasuringComplex measuringComplexes={measuringComplexes}/>
                 </div>
             </div>
         </AppLayout>
