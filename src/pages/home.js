@@ -10,8 +10,14 @@ import { useAuth } from '@/hooks/auth'
 import axios from '@/lib/axios'
 export default function Home() {
     const { user } = useAuth()
+    const [profile, setProfile] = useState([])
     const [contracts, setContracts] = useState([])
-    async function initialState() {
+    async function initialProfileState() {
+        const response = await axios.get(`api/user-profiles/${user?.id}`)
+        const newProfile = response.data.data
+        setProfile(newProfile)
+    }
+    async function initiaContractslState() {
         const response = await axios.get(`/api/users/${user.id}/contracts`)
         const newContracts = response.data.data
         setContracts(newContracts)
@@ -19,9 +25,9 @@ export default function Home() {
 
     useEffect(() => {
         if (user) {
-            initialState()
+            initialProfileState()
+            initiaContractslState()
         }
-        //вот тут мы их вызываем
         //вот тут мы их вызываем
         //так же тут можно записывать это все в global state (ReduxToolkit)
         return () => {}
@@ -35,7 +41,7 @@ export default function Home() {
             <div className="content">
                 <div className="grid grid-cols-12 gap-6">
                     <div className="col-span-12 2xl:col-span-6">
-                        <TableProfile />
+                        <TableProfile user={user} profile={profile}/>
                     </div>
                     <div className="col-span-12 2xl:col-span-6">
                         <TableContracts contracts={contracts} />

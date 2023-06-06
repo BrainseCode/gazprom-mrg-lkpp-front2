@@ -3,7 +3,8 @@ import Link from 'next/link'
 import classNames from 'classnames'
 import styles from './TableProfile.module.css'
 
-export default function TableProfile() {
+export default function TableProfile({user, profile}) {
+    console.log(profile)
     return (
         <div
             className={classNames(
@@ -39,6 +40,7 @@ export default function TableProfile() {
                             id="agent"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                             placeholder=""
+                            value={profile?.short_name}
                         />
                     </div>
                 </div>
@@ -55,6 +57,7 @@ export default function TableProfile() {
                             id="face"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                             placeholder=""
+                            value={profile?.responsible_person}
                         />
                     </div>
                 </div>
@@ -71,6 +74,7 @@ export default function TableProfile() {
                             id="phone"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                             placeholder=""
+                            value={profile?.shared_phone}
                         />
                     </div>
                 </div>
@@ -87,6 +91,7 @@ export default function TableProfile() {
                             id="email"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                             placeholder=""
+                            value={user?.email}
                         />
                     </div>
                 </div>
