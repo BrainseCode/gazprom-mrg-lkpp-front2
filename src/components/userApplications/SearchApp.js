@@ -2,7 +2,7 @@ import { useState } from 'react'
 import styles from './searchApp.module.css'
 import classNames from 'classnames'
 
-export default function SearchApp() {
+export default function SearchApp({requests}) {
     let app = [
         {
             id: 1,
@@ -164,16 +164,16 @@ export default function SearchApp() {
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
-                                {app.map(app => (
-                                    <tr key={app.id}>
+                                {requests.map(request => (
+                                    <tr key={request.id}>
                                         <td className="px-6 text-left whitespace-nowrap text-sm font-medium text-gray-900">
-                                            {app.document}
+                                            {request.name}
                                         </td>
                                         <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {app.date}
+                                            {request.created_at.substring(0, 10)}
                                         </td>
                                         <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {app.status}
+                                            {request.status}
                                         </td>
                                         <td className="px-6 text-right whitespace-nowrap text-sm font-medium">
                                             <button
