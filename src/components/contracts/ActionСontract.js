@@ -3,7 +3,6 @@ import styles from './actionСontract.module.css'
 import classNames from 'classnames'
 
 export default function ActionContract({contracts}) {
-    console.log(contracts)
     const contract = contracts[0]
     return (
         <div

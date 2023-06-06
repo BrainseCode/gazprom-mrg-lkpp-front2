@@ -3,7 +3,7 @@ import './legalInfo.module.css'
 import classNames from 'classnames'
 import styles from '@/components/userProfile/TableProfile.module.css'
 
-export default function LegalInfo() {
+export default function LegalInfo({profile}) {
     return (
         <div
             className={classNames(
@@ -40,6 +40,7 @@ export default function LegalInfo() {
                             id="agent"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                             placeholder=""
+                            value={profile?.inn}
                         />
                     </div>
                 </div>
@@ -56,6 +57,7 @@ export default function LegalInfo() {
                             id="fullname"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                             placeholder=""
+                            value={profile?.kpp}
                         />
                     </div>
                 </div>
@@ -72,6 +74,7 @@ export default function LegalInfo() {
                             id="face"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                             placeholder=""
+                            value={profile?.ogrn}
                         />
                     </div>
                 </div>
@@ -88,6 +91,7 @@ export default function LegalInfo() {
                             id="phone"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                             placeholder=""
+                            value={profile?.okpo}
                         />
                     </div>
                 </div>
@@ -104,6 +108,7 @@ export default function LegalInfo() {
                             id="phoneuser"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                             placeholder=""
+                            value={profile?.okfs}
                         />
                     </div>
                 </div>
@@ -120,6 +125,7 @@ export default function LegalInfo() {
                             id="mail"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                             placeholder=""
+                            value={profile?.okato}
                         />
                     </div>
                 </div>
@@ -136,6 +142,7 @@ export default function LegalInfo() {
                             id="legal"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                             placeholder=""
+                            value={profile?.okopf}
                         />
                     </div>
                 </div>
@@ -152,6 +159,7 @@ export default function LegalInfo() {
                             id="phyadress"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                             placeholder=""
+                            value={profile?.oktmo}
                         />
                     </div>
                 </div>
@@ -168,6 +176,7 @@ export default function LegalInfo() {
                             id="phyadress"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                             placeholder=""
+                            value={profile?.okved}
                         />
                     </div>
                 </div>
@@ -184,6 +193,7 @@ export default function LegalInfo() {
                             id="phyadress"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                             placeholder=""
+                            value={profile?.okogu}
                         />
                     </div>
                 </div>
