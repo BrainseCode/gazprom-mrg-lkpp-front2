@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import styles from './tableContracts.module.css'
 
-function TableContracts() {
+function TableContracts({contracts}) {
     let prof = [
         {
             id: 1,
@@ -102,19 +102,19 @@ function TableContracts() {
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
-                                {prof.map(person => (
-                                    <tr key={person.id}>
+                                {contracts.map(contract => (
+                                    <tr key={contract.id}>
                                         <td className="px-6 whitespace-nowrap text-left text-sm font-medium text-gray-900">
-                                            {person.number}
+                                            {contract.number}
                                         </td>
                                         <td className="px-6 whitespace-nowrap text-center text-sm text-gray-500">
-                                            {person.type}
+                                            {contract.type}
                                         </td>
                                         <td className="px-6 whitespace-nowrap text-center text-sm text-gray-500">
-                                            {person.status}
+                                            {contract.status}
                                         </td>
                                         <td className="px-6 whitespace-nowrap text-center text-sm text-gray-500">
-                                            {person.debt}
+                                            {contract.debt}
                                         </td>
                                         <td className="px-6 whitespace-nowrap text-right text-sm font-medium">
                                             <button

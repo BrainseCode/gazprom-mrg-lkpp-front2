@@ -2,7 +2,9 @@ import React from 'react'
 import styles from './actionСontract.module.css'
 import classNames from 'classnames'
 
-export default function ActionContract() {
+export default function ActionContract({contracts}) {
+    console.log(contracts)
+    const contract = contracts[0]
     return (
         <div
             className={classNames(
@@ -54,6 +56,7 @@ export default function ActionContract() {
                             id="start"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                             placeholder=""
+                            value={contract?.start_date.substring(0, 10)}
                         />
                     </div>
                 </div>

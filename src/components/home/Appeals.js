@@ -3,6 +3,7 @@ import styles from './Appeals.module.css'
 import classNames from 'classnames'
 
 export default function Appeals({requests}) {
+    console.log(requests)
     let complexes = [
         {
             id: 1,
@@ -84,27 +85,17 @@ export default function Appeals({requests}) {
                                     <th
                                         scope="col"
                                         className="px-6 py-1 text-left text-xg font-bold">
-                                        Адрес
+                                        Документ
                                     </th>
                                     <th
                                         scope="col"
                                         className="px-6 py-1 text-center text-xg font-bold">
-                                        Прибор учета
+                                        Дата создания
                                     </th>
                                     <th
                                         scope="col"
                                         className="px-6 py-1 text-center text-xg font-bold">
-                                        Договор
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        className="px-6 py-1 text-center text-xg font-bold">
-                                        Объём
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        className="px-6 py-1 text-center text-xg font-bold">
-                                        План
+                                        Статус
                                     </th>
                                     <th
                                         scope="col"
@@ -117,19 +108,13 @@ export default function Appeals({requests}) {
                                 {requests.map(request => (
                                     <tr key={request.id}>
                                         <td className="px-6 text-left whitespace-nowrap text-sm font-medium text-gray-900">
-                                            {request.address}
+                                            {request.name}
                                         </td>
                                         <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {request.device}
+                                            {request.created_at.substring(0, 10)}
                                         </td>
                                         <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {request.contract}
-                                        </td>
-                                        <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {request.volume}
-                                        </td>
-                                        <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {request.plan}
+                                            {request.status}
                                         </td>
                                         <td className="px-6 text-right whitespace-nowrap text-sm font-medium">
                                             <button
