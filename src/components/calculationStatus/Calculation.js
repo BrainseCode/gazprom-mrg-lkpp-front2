@@ -3,7 +3,6 @@ import styles from './Calculation.module.css'
 import classNames from 'classnames'
 
 export default function Calculation({contracts}) {
-    console.log(contracts[0]?.payGazDelivereds)
     let count = {
         summ: '6 940.77 руб',
         table: [

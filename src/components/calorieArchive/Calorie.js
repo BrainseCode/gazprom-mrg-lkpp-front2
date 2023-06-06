@@ -2,7 +2,8 @@ import React from 'react'
 import styles from './calorieArchive.module.css'
 import classNames from 'classnames'
 
-export default function Calorie() {
+export default function Calorie({contracts}) {
+    const archiv = contracts[0]?.calorieArchives
     let complexes = [
         { id: 1, date: '1 июня', calorie: '8 000', pasport: '№746647' },
         { id: 2, date: '1 июня', calorie: '8 000', pasport: '№746647' },
@@ -59,16 +60,16 @@ export default function Calorie() {
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
-                                {complexes.map(complexe => (
-                                    <tr key={complexe.id}>
+                                {archiv?.map(item => (
+                                    <tr key={item.id}>
                                         <td className="px-6 text-left whitespace-nowrap text-sm font-medium text-gray-900">
-                                            {complexe.date}
+                                            {item.date.substring(0, 10)}
                                         </td>
                                         <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {complexe.calorie}
+                                            {item.caloric}
                                         </td>
                                         <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {complexe.pasport}
+                                            {item.quality_passport}
                                         </td>
                                         <td className="px-6 text-right whitespace-nowrap text-sm text-gray-500">
                                             <button

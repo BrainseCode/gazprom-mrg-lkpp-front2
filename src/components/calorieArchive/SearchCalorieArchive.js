@@ -3,7 +3,19 @@ import styles from './searchCalorieArchive.module.css'
 import dynamic from 'next/dynamic'
 import classNames from 'classnames'
 
-export default function SearchCalorieArchive() {
+export default function SearchCalorieArchive({contracts}) {
+    const archivData = contracts[0]?.calorieArchives
+    console.log(archivData)
+    let categoriesDate = []
+    let dataCaloric = []
+
+    if(archivData) {
+        for (const item of archivData) {
+            categoriesDate.push(item?.date)
+            dataCaloric.push(item?.caloric)
+        }
+    }
+
     // const [chart, setChart] = useState(test1);
     const ReactApexChart = dynamic(() => import('react-apexcharts'), {
         ssr: false,
@@ -22,15 +34,7 @@ export default function SearchCalorieArchive() {
         },
         xaxis: {
             type: 'datetime',
-            categories: [
-                '2018-09-19T00:00:00.000Z',
-                '2018-09-19T01:30:00.000Z',
-                '2018-09-19T02:30:00.000Z',
-                '2018-09-19T03:30:00.000Z',
-                '2018-09-19T04:30:00.000Z',
-                '2018-09-19T05:30:00.000Z',
-                '2018-09-19T06:30:00.000Z',
-            ],
+            categories: categoriesDate,
         },
         tooltip: {
             x: {
@@ -41,12 +45,8 @@ export default function SearchCalorieArchive() {
 
     const series = [
         {
-            name: 'series1',
-            data: [31, 40, 28, 51, 42, 109, 100],
-        },
-        {
-            name: 'series2',
-            data: [11, 32, 45, 32, 34, 52, 41],
+            name: 'Калорийность объекта',
+            data: dataCaloric,
         },
     ]
 

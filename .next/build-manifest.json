@@ -25,10 +25,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/calculation-status": [
+    "/calorie-archive": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/calculation-status.js"
+      "static/chunks/pages/calorie-archive.js"
     ]
   },
   "ampFirstPages": []
