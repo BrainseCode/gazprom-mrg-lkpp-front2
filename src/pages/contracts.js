@@ -9,7 +9,7 @@ import MeasuringComplex from '@/components/contracts/MeasuringComplex'
 import Head from 'next/head'
 import AppLayout from '@/components/Layouts/AppLayout'
 import axios from "@/lib/axios"
-import { useAuth } from '@/hooks/auth'
+import {useAuth} from '@/hooks/auth'
 
 
 export default function Contracts() {
@@ -17,6 +17,7 @@ export default function Contracts() {
     const [contracts, setContracts] = useState([])
     const [measuringComplexes, setMeasuringComplexes] = useState([])
     const [indications, setIndications] = useState([])
+    const [connectionPoints, setConnectionPoints] = useState([])
 
     async function initiaContractslState() {
         const response = await axios.get(`/api/users/${user.id}/contracts`)
@@ -32,14 +33,28 @@ export default function Contracts() {
     }
     async function initialIndicationsState() {
         const response = await axios.get(`/api/indications`)
-        const newindications = response.data.data
-        setIndications(newindications)
+        const newIndications = response.data.data
+        setIndications(newIndications)
     }
+
+    async function initialConnectionPointsState() {
+        const response = await axios.get(`/api/connection-points/`)
+        const newConnectionPoints = response.data.data
+        for (let connectionPoint of newConnectionPoints) {
+            const response = await axios.get(`/api/connection-points/${connectionPoint?.id}/gas-consuming-equipments`)
+            connectionPoint.gasConsumingEquipments = response.data.data
+            const responseQuarters = await axios.get(`/api/connection-points/${connectionPoint?.id}/indication-quarters`)
+            connectionPoint.indicationQuarters = responseQuarters.data.data
+        }
+        setConnectionPoints(newConnectionPoints)
+    }
+
 
     useEffect(() => {
         if (user) {
             initiaContractslState()
             initialIndicationsState()
+            initialConnectionPointsState()
         }
         //вот тут мы их вызываем
         //так же тут можно записывать это все в global state (ReduxToolkit)
@@ -63,10 +78,10 @@ export default function Contracts() {
                     </div>
                 </div>
                 <div className="col-span-12 2xl:col-span-12 pt-2">
-                    <GasConsumingEquipment />
+                    <GasConsumingEquipment connectionPoints={connectionPoints}/>
                 </div>
                 <div className="col-span-12 2xl:col-span-12 pt-2">
-                    <SeparationGazEquipment />
+                    <SeparationGazEquipment connectionPoints={connectionPoints}/>
                 </div>
                 <div className="col-span-12 2xl:col-span-12 pt-2">
                     <Indications indications={indications}/>

@@ -4,7 +4,7 @@ import { ChevronRightIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 import classNames from 'classnames'
 import styles from './gasConsumingEquipment.module.css'
 
-export default function GasConsumingEquipment() {
+export default function GasConsumingEquipment({connectionPoints}) {
     let elem = [
         {
             id: 1,
@@ -192,8 +192,8 @@ export default function GasConsumingEquipment() {
       <div className="ml-4 mr-4">
         <div className="mt-1 mb-5">
           <dl className="space-y-6 divide-y divide-gray-900/10">
-            {elem.map(elem => (
-              <Disclosure as="div" key={elem.text} className="pt-1">
+            {connectionPoints.map(connectionPoint => (
+              <Disclosure as="div" key={connectionPoint?.address} className="pt-1">
                 {({ open }) => (
                   <>
                     <dt>
@@ -222,7 +222,7 @@ export default function GasConsumingEquipment() {
                           )}
                         </span>
                         <span className="text-base font-semibold leading-7 ml-1">
-                          {elem.text}
+                          {connectionPoint?.address}
                         </span>
                       </Disclosure.Button>
                     </dt>
@@ -264,22 +264,22 @@ export default function GasConsumingEquipment() {
                             </tr>
                           </thead>
                           <tbody className="bg-white divide-y divide-gray-200">
-                            {elem.table.map(tab => (
-                              <tr key={tab.id}>
+                            {connectionPoint?.gasConsumingEquipments?.map(gasConsumingEquipment => (
+                              <tr key={gasConsumingEquipment?.id}>
                                 <td className="px-6 whitespace-nowrap pt-4 pb-4 text-left text-sm font-medium text-gray-900">
-                                  {tab.name}
+                                  {gasConsumingEquipment?.name}
                                 </td>
                                 <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm text-gray-500">
-                                  {tab.complex}
+                                  {connectionPoint?.address}
                                 </td>
                                 <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm text-gray-500">
-                                  {tab.count}
+                                  {gasConsumingEquipment?.quantity}
                                 </td>
                                 <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm text-gray-500">
-                                  {tab.power}
+                                  {gasConsumingEquipment?.power}
                                 </td>
                                 <td className="px-6 whitespace-nowrap pt-4 pb-4 text-right text-sm text-gray-500">
-                                  {tab.consumption}
+                                  {gasConsumingEquipment?.consumption}
                                 </td>
                               </tr>
                             ))}
