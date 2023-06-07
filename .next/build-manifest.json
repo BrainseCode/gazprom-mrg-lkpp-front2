@@ -25,10 +25,50 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
+    "/calculation-status": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/calculation-status.js"
+    ],
+    "/calorie-archive": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/calorie-archive.js"
+    ],
+    "/contracts": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/contracts.js"
+    ],
+    "/home": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/home.js"
+    ],
+    "/login": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/login.js"
+    ],
     "/measuring-complex": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/measuring-complex.js"
+    ],
+    "/technical-support": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/technical-support.js"
+    ],
+    "/user-applications": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/user-applications.js"
+    ],
+    "/user-profile": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/user-profile.js"
     ]
   },
   "ampFirstPages": []
