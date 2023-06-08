@@ -5,7 +5,6 @@ import MeasuringComplexes from '@/components/home/MeasuringComplexes'
 import Appeals from '@/components/home/Appeals'
 import Head from 'next/head'
 import AppLayout from '@/components/Layouts/AppLayout'
-// import Link from 'next/link'
 import { useAuth } from '@/hooks/auth'
 import axios from '@/lib/axios'
 export default function Home() {

@@ -26,7 +26,7 @@ import axios from "@/lib/axios";
 // const username = 'ООО "Ветер"'
 
 const roleUser = 3 //1 администратор 2 менеджер 3 пользователи
-const userId = 324324
+// const userId = 324324
 
 let navigation = [
     {

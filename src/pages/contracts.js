@@ -11,7 +11,6 @@ import AppLayout from '@/components/Layouts/AppLayout'
 import axios from "@/lib/axios"
 import {useAuth} from '@/hooks/auth'
 
-
 export default function Contracts() {
     const { user } = useAuth()
     const [contracts, setContracts] = useState([])
@@ -56,8 +55,6 @@ export default function Contracts() {
             initialIndicationsState()
             initialConnectionPointsState()
         }
-        //вот тут мы их вызываем
-        //так же тут можно записывать это все в global state (ReduxToolkit)
         return () => {}
     }, [user])
     return (

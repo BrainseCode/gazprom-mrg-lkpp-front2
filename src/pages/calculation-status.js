@@ -32,8 +32,6 @@ export default function CalculationStatus() {
             initiaContractslState()
 
         }
-        //вот тут мы их вызываем
-        //так же тут можно записывать это все в global state (ReduxToolkit)
         return () => {}
     }, [user])
     return (
