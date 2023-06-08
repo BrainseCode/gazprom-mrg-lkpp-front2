@@ -11,6 +11,8 @@ import { useAuth } from '@/hooks/auth'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
+import styles from './login.module.css'
+
 const Login = () => {
     const router = useRouter()
 
@@ -59,7 +61,7 @@ const Login = () => {
                 <form onSubmit={submitForm}>
                     {/* Email Address */}
                     <div>
-                        <Label htmlFor="email">Email</Label>
+                        <Label htmlFor="email">ИНН</Label>
 
                         <Input
                             id="email"
@@ -69,6 +71,7 @@ const Login = () => {
                             onChange={event => setEmail(event.target.value)}
                             required
                             autoFocus
+                            
                         />
 
                         <InputError messages={errors.email} className="mt-2" />
@@ -76,7 +79,7 @@ const Login = () => {
 
                     {/* Password */}
                     <div className="mt-4">
-                        <Label htmlFor="password">Password</Label>
+                        <Label htmlFor="password">Пароль</Label>
 
                         <Input
                             id="password"
@@ -86,6 +89,7 @@ const Login = () => {
                             onChange={event => setPassword(event.target.value)}
                             required
                             autoComplete="current-password"
+                            
                         />
 
                         <InputError
@@ -116,11 +120,12 @@ const Login = () => {
                     </div>
 
                     <div className="flex items-center justify-end mt-4">
-                        <Link
+                        {/* <Link
                             href="/forgot-password"
                             className="underline text-sm text-gray-600 hover:text-gray-900">
-                            Забыли пароль?
-                        </Link>
+                            "Это демо режим"
+                        </Link> */}
+                        <div className={styles.demo}><i><b>Демо режим</b></i></div>
 
                         <Button className="ml-3">Войти</Button>
                     </div>

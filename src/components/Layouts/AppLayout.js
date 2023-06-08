@@ -23,6 +23,7 @@ import { useRouter } from 'next/router'
 import NavLink from '@/components/NavLink'
 import axios from "@/lib/axios";
 
+import styles from './app.module.css'
 // const username = 'ООО "Ветер"'
 
 const roleUser = 3 //1 администратор 2 менеджер 3 пользователи
@@ -126,8 +127,8 @@ if (roleUser === 1) {
 }
 
 const userNavigation = [
-    { name: 'Профиль', href: '/userprofile' },
-    { name: 'Настройки', href: '/settings' },
+    { name: 'Профиль', href: '/user-profile' },
+    { name: 'Сменить пароль', href: '/settings' },
     // { name: 'Выход', href: '/logout' },
 ]
 
@@ -264,15 +265,12 @@ const AppLayout = ({ children }) => {
                     <div className="flex flex-shrink-0 items-center px-4">
                         <Link href="/" className="flex items-center">
                             <Image
-                                width={120}
-                                height={60}
-                                className="h-8 w-auto"
-                                src="/images/logo.png"
+                                width={300}
+                                height={150}
+                                className="w-auto"
+                                src="/images/logo2.png"
                                 alt="Газпром"
                             />
-                            <span className="ml-4">
-                                Газпром Межрегионгаз Иваново
-                            </span>
                         </Link>
                     </div>
                     <div className="mt-5 flex flex-grow flex-col">
@@ -328,35 +326,17 @@ const AppLayout = ({ children }) => {
                     </button>
                     <div className="flex flex-1 justify-between px-4">
                         <div className="flex flex-1">
-                            <form>
-                                <div>
-                                    <h2>ДЕМОНСТРАЦИОННЫЙ РЕЖИМ</h2>
+                            <div className = 'w-full flex justify-center items-center'>
+                                <div className={classNames(
+                                        'w-96',
+                                        'flex',
+                                        'justify-center',
+                                        'items-center',
+                                        'rounded',
+                                        styles.demo,
+                                        )}>ДЕМОНСТРАЦИОННЫЙ РЕЖИМ</div>
                                 </div>
-                            {/*    className="flex w-full md:ml-0"*/}
-                            {/*    action="#"*/}
-                            {/*    method="GET">*/}
-                            {/*    <label*/}
-                            {/*        htmlFor="search-field"*/}
-                            {/*        className="sr-only">*/}
-                            {/*        Search*/}
-                            {/*    </label>*/}
-                            {/*    <div className="relative w-full text-gray-400 focus-within:text-gray-600">*/}
-                            {/*        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center">*/}
-                            {/*            <MagnifyingGlassIcon*/}
-                            {/*                className="h-5 w-5"*/}
-                            {/*                aria-hidden="true"*/}
-                            {/*            />*/}
-                            {/*        </div>*/}
-                            {/*        <input*/}
-                            {/*            id="search-field"*/}
-                            {/*            className="block h-full w-full border-transparent py-2 pl-8 pr-3 text-gray-900 placeholder-gray-500 focus:border-transparent focus:placeholder-gray-400 focus:outline-none focus:ring-0 sm:text-sm"*/}
-                            {/*            placeholder="Search"*/}
-                            {/*            type="search"*/}
-                            {/*            name="search"*/}
-                            {/*        />*/}
-                            {/*    </div>*/}
-                            </form>
-                        </div>
+                            </div>
                         <div className="ml-4 flex items-center md:ml-6">
                             <span>{username}</span>
 

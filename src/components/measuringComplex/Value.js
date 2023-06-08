@@ -24,6 +24,25 @@ export default function Value({indications}) {
         chart: {
             height: 350,
             type: 'area',
+            defaultLocale: 'ru',
+            locales: [{
+                name: 'ru',
+                options: {
+                months: ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'],
+                shortMonths: ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'],
+                days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                shortDays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                toolbar: {
+                    download: 'Download SVG',
+                    selection: 'Selection',
+                    selectionZoom: 'Selection Zoom',
+                    zoomIn: 'Zoom In',
+                    zoomOut: 'Zoom Out',
+                    pan: 'Panning',
+                    reset: 'Reset Zoom',
+                }
+                }
+            }]
         },
         dataLabels: {
             enabled: false,

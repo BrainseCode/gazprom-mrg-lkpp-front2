@@ -1,0 +1,12 @@
+@keyframes glowing {
+    0% { background-color: #fbf8f8; box-shadow: 0 0 5px #fbf8f8; }
+    50% { background-color: #21A0ED; box-shadow: 0 0 20px #21A0ED; }
+    100% { background-color: #fbf8f8; box-shadow: 0 0 5px #fbf8f8; }
+    }
+    .demo {
+    animation: glowing 1300ms infinite;
+    border-radius: 10px;
+    width: 140px;
+    display: flex;
+    justify-content: center;
+    }
