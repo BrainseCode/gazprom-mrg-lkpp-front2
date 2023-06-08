@@ -158,7 +158,7 @@ export default function SeparationGazEquipment({connectionPoints}) {
       <div className="ml-4 mr-4">
         <div className="mt-1 mb-5">
           <dl className="space-y-6 divide-y divide-gray-900/10">
-            {connectionPoints.map(connectionPoint => (
+            {connectionPoints?.map(connectionPoint => (
               <Disclosure as="div" key={connectionPoint?.address} className="pt-1">
                 {({ open }) => (
                   <>
@@ -395,7 +395,7 @@ export default function SeparationGazEquipment({connectionPoints}) {
                                 scope="col"
                                 className="px-6 py-2 text-center text-xg font-bold"
                             >
-                              {summIndicationQuarters.quarter_1}
+                              {summIndicationQuarters?.quarter_1}
                             </th>
                             <th
                                 scope="col"
@@ -407,7 +407,7 @@ export default function SeparationGazEquipment({connectionPoints}) {
                                 scope="col"
                                 className="px-6 py-2 text-center text-xg font-bold"
                             >
-                              {summIndicationQuarters.quarter_2}
+                              {summIndicationQuarters?.quarter_2}
                             </th>
                             <th
                                 scope="col"
@@ -419,7 +419,7 @@ export default function SeparationGazEquipment({connectionPoints}) {
                                 scope="col"
                                 className="px-6 py-2 text-center text-xg font-bold"
                             >
-                              {summIndicationQuarters.quarter_3}
+                              {summIndicationQuarters?.quarter_3}
                             </th>
                             <th
                                 scope="col"
@@ -431,7 +431,7 @@ export default function SeparationGazEquipment({connectionPoints}) {
                                 scope="col"
                                 className="px-6 py-2 text-right text-xg font-bold"
                             >
-                              {summIndicationQuarters.quarter_4}
+                              {summIndicationQuarters?.quarter_4}
                             </th>
                           </tr>
                           </thead>
@@ -441,25 +441,25 @@ export default function SeparationGazEquipment({connectionPoints}) {
                               Январь
                             </td>
                             <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm text-gray-500">
-                              {summIndicationQuarters.january}
+                              {summIndicationQuarters?.january}
                             </td>
                             <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm text-gray-500">
                               Апрель
                             </td>
                             <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm font-medium text-gray-900">
-                              {summIndicationQuarters.april}
+                              {summIndicationQuarters?.april}
                             </td>
                             <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm font-medium text-gray-900">
                               Июль
                             </td>
                             <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm text-gray-500">
-                              {summIndicationQuarters.july}
+                              {summIndicationQuarters?.july}
                             </td>
                             <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm font-medium text-gray-900">
                               Октябрь
                             </td>
                             <td className="px-6 whitespace-nowrap pt-4 pb-4 text-right text-sm text-gray-500">
-                              {summIndicationQuarters.october}
+                              {summIndicationQuarters?.october}
                             </td>
                           </tr>
                           <tr>
@@ -467,25 +467,25 @@ export default function SeparationGazEquipment({connectionPoints}) {
                               Февраль
                             </td>
                             <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm text-gray-500">
-                              {summIndicationQuarters.february}
+                              {summIndicationQuarters?.february}
                             </td>
                             <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm text-gray-500">
                               Май
                             </td>
                             <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm font-medium text-gray-900">
-                              {summIndicationQuarters.may}
+                              {summIndicationQuarters?.may}
                             </td>
                             <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm font-medium text-gray-900">
                               Август
                             </td>
                             <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm text-gray-500">
-                              {summIndicationQuarters.august}
+                              {summIndicationQuarters?.august}
                             </td>
                             <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm font-medium text-gray-900">
                               Ноябрь
                             </td>
                             <td className="px-6 whitespace-nowrap pt-4 pb-4 text-right text-sm text-gray-500">
-                              {summIndicationQuarters.november}
+                              {summIndicationQuarters?.november}
                             </td>
                           </tr>
                           <tr>
@@ -493,25 +493,25 @@ export default function SeparationGazEquipment({connectionPoints}) {
                               Март
                             </td>
                             <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm text-gray-500">
-                              {summIndicationQuarters.march}
+                              {summIndicationQuarters?.march}
                             </td>
                             <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm text-gray-500">
                               Июнь
                             </td>
                             <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm font-medium text-gray-900">
-                              {summIndicationQuarters.june}
+                              {summIndicationQuarters?.june}
                             </td>
                             <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm font-medium text-gray-900">
                               Сентябрь
                             </td>
                             <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm text-gray-500">
-                              {summIndicationQuarters.september}
+                              {summIndicationQuarters?.september}
                             </td>
                             <td className="px-6 whitespace-nowrap pt-4 pb-4 text-center text-sm font-medium text-gray-900">
                               Декабрь
                             </td>
                             <td className="px-6 whitespace-nowrap pt-4 pb-4 text-right text-sm text-gray-500">
-                              {summIndicationQuarters.december}
+                              {summIndicationQuarters?.december}
                             </td>
                           </tr>
                           </tbody>
@@ -521,7 +521,7 @@ export default function SeparationGazEquipment({connectionPoints}) {
                           <input
                               type="text"
                               className="p-0.5 ml-4"
-                              value={summIndicationQuarters.year}
+                              value={summIndicationQuarters?.year}
                           />
                         </div>
                       </p>

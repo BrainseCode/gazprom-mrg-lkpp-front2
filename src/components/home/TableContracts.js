@@ -104,18 +104,18 @@ export default function TableContracts({ contracts }) {
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
                                 {contracts.map(contract => (
-                                    <tr key={contract.id}>
+                                    <tr key={contract?.id}>
                                         <td className="px-6 text-left whitespace-nowrap text-sm font-medium text-gray-900">
-                                            {contract.number}
+                                            {contract?.number}
                                         </td>
                                         <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {contract.type}
+                                            {contract?.type}
                                         </td>
                                         <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {contract.status}
+                                            {contract?.status}
                                         </td>
                                         <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {contract.arrears}
+                                            {contract?.arrears}
                                         </td>
                                         <td className="px-6 text-right whitespace-nowrap text-sm font-medium">
                                             <button

@@ -3,8 +3,10 @@ import GroupUser from '@/components/managementUser/GroupUser'
 import Users from '@/components/managementUser/Users'
 import Head from 'next/head'
 import AppLayout from '@/components/Layouts/AppLayout'
+import {useAuth} from "@/hooks/auth";
 
 export default function Index() {
+    const { user } = useAuth()
     return (
         <AppLayout>
             <Head>

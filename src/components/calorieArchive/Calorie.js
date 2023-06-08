@@ -61,15 +61,15 @@ export default function Calorie({contracts}) {
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
                                 {archiv?.map(item => (
-                                    <tr key={item.id}>
+                                    <tr key={item?.id}>
                                         <td className="px-6 text-left whitespace-nowrap text-sm font-medium text-gray-900">
-                                            {item.date.substring(0, 10)}
+                                            {item?.date.substring(0, 10)}
                                         </td>
                                         <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {item.caloric}
+                                            {item?.caloric}
                                         </td>
                                         <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {item.quality_passport}
+                                            {item?.quality_passport}
                                         </td>
                                         <td className="px-6 text-right whitespace-nowrap text-sm text-gray-500">
                                             <button

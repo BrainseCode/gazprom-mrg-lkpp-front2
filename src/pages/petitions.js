@@ -3,8 +3,10 @@ import Petition from '@/components/petition/Petition'
 import CreateInfo from '@/components/petition/CreateInfo'
 import Head from 'next/head'
 import AppLayout from '@/components/Layouts/AppLayout'
+import {useAuth} from "@/hooks/auth";
 
 export default function Petitions() {
+    const { user } = useAuth()
     return (
         <AppLayout>
             <Head>

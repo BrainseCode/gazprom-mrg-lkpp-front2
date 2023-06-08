@@ -20,7 +20,7 @@ export default function Home() {
         setProfile(newProfile)
     }
     async function initiaContractslState() {
-        const response = await axios.get(`/api/users/${user.id}/contracts`)
+        const response = await axios.get(`/api/users/${user?.id}/contracts`)
         const newContracts = response.data.data
         setContracts(newContracts)
         let newMeasuringComplexes = []

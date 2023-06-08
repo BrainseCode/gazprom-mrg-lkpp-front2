@@ -22,14 +22,14 @@ export default function UserSettings() {
                     'rounded-t-lg',
                     styles.gazpromHead,
                 )}>
-                Настройки личного кабинета
+                Сменить пароль
             </div>
             <div className="ml-4 mr-4">
                 <div className="flex flex-col justify-between mt-1">
                     <label
                         htmlFor="email"
                         className="block text-left text-sm font-medium text-gray-700">
-                        Отображаемое имя
+                        Старый пароль
                     </label>
                     <div className="mt-1">
                         <input
@@ -45,7 +45,7 @@ export default function UserSettings() {
                     <label
                         htmlFor="email"
                         className="block text-left text-sm font-medium text-gray-700">
-                        Пароль
+                        Новый пароль
                     </label>
                     <div className="mt-1">
                         <input

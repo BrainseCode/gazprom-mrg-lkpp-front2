@@ -100,7 +100,7 @@ export default function MeasuringComplex({measuringComplexes}) {
                             </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
-                            {measuringComplexes.map(complexe => (
+                            {measuringComplexes?.map(complexe => (
                                 <tr key={complexe?.id}>
                                     <td className="px-6 text-left whitespace-nowrap text-sm font-medium text-gray-900">
                                         {complexe?.address}

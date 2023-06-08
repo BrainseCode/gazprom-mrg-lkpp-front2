@@ -158,7 +158,7 @@ export default function Indications({indications}) {
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
-                                {indications.map(indication => (
+                                {indications?.map(indication => (
                                     <tr key={indication?.id}>
                                         <td className="px-6 whitespace-nowrap pt-4 pb-4 text-left text-sm font-medium text-gray-900">
                                             {indication?.date.substring(0, 10)}

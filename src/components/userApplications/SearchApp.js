@@ -164,16 +164,16 @@ export default function SearchApp({requests}) {
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
-                                {requests.map(request => (
-                                    <tr key={request.id}>
+                                {requests?.map(request => (
+                                    <tr key={request?.id}>
                                         <td className="px-6 text-left whitespace-nowrap text-sm font-medium text-gray-900">
-                                            {request.name}
+                                            {request?.name}
                                         </td>
                                         <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {request.created_at.substring(0, 10)}
+                                            {request?.created_at.substring(0, 10)}
                                         </td>
                                         <td className="px-6 text-center whitespace-nowrap text-sm text-gray-500">
-                                            {request.status}
+                                            {request?.status}
                                         </td>
                                         <td className="px-6 text-right whitespace-nowrap text-sm font-medium">
                                             <button

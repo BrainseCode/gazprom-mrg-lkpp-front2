@@ -102,19 +102,19 @@ function TableContracts({contracts}) {
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
-                                {contracts.map(contract => (
-                                    <tr key={contract.id}>
+                                {contracts?.map(contract => (
+                                    <tr key={contract?.id}>
                                         <td className="px-6 whitespace-nowrap text-left text-sm font-medium text-gray-900">
-                                            {contract.number}
+                                            {contract?.number}
                                         </td>
                                         <td className="px-6 whitespace-nowrap text-center text-sm text-gray-500">
-                                            {contract.type}
+                                            {contract?.type}
                                         </td>
                                         <td className="px-6 whitespace-nowrap text-center text-sm text-gray-500">
-                                            {contract.status}
+                                            {contract?.status}
                                         </td>
                                         <td className="px-6 whitespace-nowrap text-center text-sm text-gray-500">
-                                            {contract.arrears}
+                                            {contract?.arrears}
                                         </td>
                                         <td className="px-6 whitespace-nowrap text-right text-sm font-medium">
                                             <button

@@ -192,7 +192,7 @@ export default function GasConsumingEquipment({connectionPoints}) {
       <div className="ml-4 mr-4">
         <div className="mt-1 mb-5">
           <dl className="space-y-6 divide-y divide-gray-900/10">
-            {connectionPoints.map(connectionPoint => (
+            {connectionPoints?.map(connectionPoint => (
               <Disclosure as="div" key={connectionPoint?.address} className="pt-1">
                 {({ open }) => (
                   <>
