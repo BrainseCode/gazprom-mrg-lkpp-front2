@@ -10,6 +10,7 @@ import Link from 'next/link'
 import { useAuth } from '@/hooks/auth'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import classNames from 'classnames'
 
 import styles from './login.module.css'
 
@@ -21,8 +22,10 @@ const Login = () => {
         redirectIfAuthenticated: '/home',
     })
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('admin@admin.com')
+    const [inn, setInn] = useState('1234567898')
+    const [password, setPassword] = useState('admin')
+    const [password2, setPassword2] = useState('123456')
     const [shouldRemember, setShouldRemember] = useState(false)
     const [errors, setErrors] = useState([])
     const [status, setStatus] = useState(null)
@@ -59,14 +62,56 @@ const Login = () => {
                 <AuthSessionStatus className="mb-4" status={status} />
 
                 <form onSubmit={submitForm}>
-                    {/* Email Address */}
+                    {/* Demo Inn */}
                     <div>
-                        <Label htmlFor="email">ИНН</Label>
+                        <Label htmlFor="text">ИНН</Label>
+
+                        <Input
+                            id="text"
+                            type="text"
+                            value={inn}
+                            defaultValue='1234567898'
+                            className="block mt-1 w-full"
+                            onChange={event => setInn(event.target.value)}
+                            required
+                            autoFocus
+                            disabled
+                        />
+
+                        <InputError messages={errors.inn} className="mt-2" />
+                    </div>
+
+                    {/* DemoPassword */}
+                    <div className="mt-4">
+                        <Label htmlFor="password">Пароль</Label>
+
+                        <Input
+                            id="password2"
+                            type="password"
+                            value={password}
+                            className="block mt-1 w-full"
+                            onChange={event => setPassword2(event.target.value)}
+                            required
+                            autoComplete="current-password"
+                            defaultValue='******'
+                            disabled
+                        />
+
+                        <InputError
+                            messages={errors.password2}
+                            className="mt-2"
+                        />
+                    </div>
+
+                    {/* Email Address */}
+                    <div className={classNames( styles.dnone )}>
+                        <Label htmlFor="email">Email</Label>
 
                         <Input
                             id="email"
                             type="email"
                             value={email}
+                            defaultValue='admin@admin.com'
                             className="block mt-1 w-full"
                             onChange={event => setEmail(event.target.value)}
                             required
@@ -78,7 +123,7 @@ const Login = () => {
                     </div>
 
                     {/* Password */}
-                    <div className="mt-4">
+                    <div className={classNames( 'mt-4', styles.dnone )}>
                         <Label htmlFor="password">Пароль</Label>
 
                         <Input
@@ -89,6 +134,7 @@ const Login = () => {
                             onChange={event => setPassword(event.target.value)}
                             required
                             autoComplete="current-password"
+                            defaultValue='admin'
                             
                         />
 
