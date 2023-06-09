@@ -23,7 +23,7 @@ export default function Value({indications}) {
     const options = {
         chart: {
             height: 350,
-            type: 'area',
+            type: 'line',
             defaultLocale: 'ru',
             locales: [{
                 name: 'ru',
@@ -48,7 +48,7 @@ export default function Value({indications}) {
             enabled: false,
         },
         stroke: {
-            curve: 'smooth',
+            curve: 'stepline',
         },
         xaxis: {
             type: 'datetime',
@@ -320,7 +320,7 @@ export default function Value({indications}) {
                             <ReactApexChart
                                 options={options}
                                 series={series}
-                                type="area"
+                                type="line"
                                 height={350}
                             />
                         )}

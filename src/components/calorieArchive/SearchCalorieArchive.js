@@ -23,7 +23,7 @@ export default function SearchCalorieArchive({contracts}) {
     const options = {
         chart: {
             height: 350,
-            type: 'area',
+            type: 'line',
             defaultLocale: 'ru',
             locales: [{
                 name: 'ru',
@@ -48,7 +48,7 @@ export default function SearchCalorieArchive({contracts}) {
             enabled: false,
         },
         stroke: {
-            curve: 'smooth',
+            curve: 'stepline',
         },
         xaxis: {
             type: 'datetime',
@@ -181,7 +181,7 @@ export default function SearchCalorieArchive({contracts}) {
                     <div id="chart">
                         {typeof window !== 'undefined' && (
                             <ReactApexChart
-                                type="area"
+                                type="line"
                                 options={options}
                                 series={series}
                                 height={350}
