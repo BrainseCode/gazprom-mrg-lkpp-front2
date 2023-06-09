@@ -3,6 +3,7 @@ import styles from './userSettings.module.css'
 import classNames from 'classnames'
 
 export default function UserSettings() {
+    const pass = ()=>{alert("Недоступно в демо режиме");}
     return (
         <div
             className={classNames(
@@ -29,7 +30,7 @@ export default function UserSettings() {
                     <label
                         htmlFor="email"
                         className="block text-left text-sm font-medium text-gray-700">
-                        Старый пароль
+                        Текущий пароль
                     </label>
                     <div className="mt-1">
                         <input
@@ -37,7 +38,7 @@ export default function UserSettings() {
                             name="lkName"
                             id="lkName"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                            placeholder=""
+                            placeholder="******"
                         />
                     </div>
                 </div>
@@ -53,7 +54,7 @@ export default function UserSettings() {
                             name="lkPass"
                             id="lkPass"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                            placeholder=""
+                            placeholder="******"
                         />
                     </div>
                 </div>
@@ -61,7 +62,7 @@ export default function UserSettings() {
                     <label
                         htmlFor="email"
                         className="block text-left text-sm font-medium text-gray-700">
-                        Повторите пароль
+                        Повторите новый пароль
                     </label>
                     <div className="mt-1">
                         <input
@@ -69,12 +70,13 @@ export default function UserSettings() {
                             name="lkPass2"
                             id="lkPass2"
                             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                            placeholder=""
+                            placeholder="******"
                         />
                     </div>
                 </div>
                 <div className="flex">
                     <button
+                        onClick={pass}
                         className={classNames(
                             styles.btn,
                             styles.btnBlue,

@@ -11,32 +11,32 @@ const faqs = [
     {
         question: 'Авторизация',
         answer:
-            "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+            "Авторизация — предоставление определённому лицу или группе лиц прав на выполнение определённых действий; а также процесс проверки (подтверждения) данных прав при попытке выполнения этих действий. В другом источнике указано что Авторизация (фр. autorisation) — разрешение, полномочие, даваемое на какие-нибудь действия. На начало XX столетия Авторизация, уполномочие на какое-либо действие; дозволение от автора (например, на право перевода). Часто можно услышать выражение, что какой-то человек «авторизован» для выполнения данной операции — это значит, что он имеет на неё право. Авторизацию не следует путать с аутентификацией — процедурой проверки легальности пользователя или данных, например, проверки соответствия введённого пользователем пароля к учётной записи паролю в базе данных, или проверка цифровой подписи письма по ключу шифрования, или проверка контрольной суммы файла на соответствие заявленной автором этого файла. Авторизация же производит контроль доступа к различным ресурсам системы в процессе работы легальных пользователей после успешного прохождения ими аутентификации.",
     },
     {
         question: 'Главная страницы web приложения',
         answer:
-            "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+            "Главная страница — самая первая страница, которая появляется при заходе на сайт. Главная страница есть у всех сайтов, от солидных интернет-магазинов до популярных форумов. Основная функция главной страницы – это привлечение внимания целевой аудитории и конвертации пользователей в реальных клиентов.",
     },
     {
         question: 'Профиль учетной записи',
         answer:
-            "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+            "Профиль пользователя — это набор параметров и сведений, связанных с пользователем. Он содержит важную информацию, которая используется для идентификации человека, такую как его имя, возраст, портретная фотография и индивидуальные характеристики, такие как знания или опыт.",
     },
     {
         question: 'Лицевые счета',
         answer:
-            "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+            "Лицевой счёт — бухгалтерский счёт для ведения учёта расчетов с физическими и юридическими лицами.",
     },
     {
         question: 'Приборы учета',
         answer:
-            "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+            "Приборы учета — совокупность устройств, обеспечивающих измерение и учет газа.",
     },
     {
         question: 'Создание заявки',
         answer:
-            "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+            "Заблаговременно заявленное в письменной форме намерение, желание потребителя.",
     },
 ]
 
