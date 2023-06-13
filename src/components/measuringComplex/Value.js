@@ -1,8 +1,10 @@
-// import { useState } from 'react'
+'use client';
 import styles from "./value.module.css";
 import dynamic from "next/dynamic";
 import classNames from "classnames";
-import React, { Suspense } from "react";
+import React, { Suspense, memo, useEffect, useState } from "react";
+
+
 
 let categoriesDate = [];
 let dataPlan = [];
@@ -147,24 +149,24 @@ let complexes = [
   },
 ];
 
-export default function Value({ indications }) {
+export default memo(function Value({ indications }) {
 
-  if (indications) {
-    for (const item of indications) {
-      categoriesDate.push(item?.date);
-      dataPlan.push(item?.plan);
-      dataVolume.push(item?.volume);
-    }
+  for (const item of indications) {
+    categoriesDate.push(item?.date);
+    dataPlan.push(item?.plan);
+    dataVolume.push(item?.volume);
   }
-
-  const ReactApexChart = dynamic(() => import("react-apexcharts"), {
-    ssr: false,
-  });
 
   const date = new Date();
   const futureDate = date.getDate() - 1;
   date.setDate(futureDate);
   const defaultValue = date.toLocaleDateString("en-CA");
+
+
+  const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+    ssr: false,
+  });
+
 
   const queryArh = () => {
     console.log("Запрос архива с бэка");
@@ -197,6 +199,7 @@ export default function Value({ indications }) {
     console.log("Здесь как то передаем показания");
     alert("Здесь как то передаем показания");
   };
+
 
   return (
     <div
@@ -369,7 +372,7 @@ export default function Value({ indications }) {
         <div className="mt-1 mb-5">
           <div id="chart">
             {/* компонент загрузки */}
-            <Suspense fallback={"загрузка"}> 
+            <Suspense fallback={"загрузка"}>
               <ReactApexChart
                 options={options}
                 series={series}
@@ -382,4 +385,4 @@ export default function Value({ indications }) {
       </div>
     </div>
   );
-}
+})

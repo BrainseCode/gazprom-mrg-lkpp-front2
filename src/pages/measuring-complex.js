@@ -17,7 +17,7 @@ export default function Index() {
   const [calculator, setCalculator] = useState([]);
   const [powerUnit, setPowerUnit] = useState([]);
 
-  
+
 
   async function initiaContractslState() {
     const response = await axios.get(`/api/users/${user.id}/contracts`);
@@ -31,57 +31,81 @@ export default function Index() {
 
       contract.measuringComplex = measuringComplex;
     }
-    setContracts(newContracts);
+
+    return newContracts;
   }
+
 
   async function initialIndicationsState() {
     const response = await axios.get(`/api/indications`);
     const newIndications = response.data.data;
 
-    setIndications(newIndications);
+    return newIndications
   }
 
   async function initialMeterState() {
     const response = await axios.get(`/api/meters`);
     const newMeter = response.data.data;
-    setMeter(newMeter?.[0]);
+
+    return newMeter?.[0];
   }
 
   async function initialPressureState() {
     const response = await axios.get(`/api/pressure-gauges`);
     const newPressure = response.data.data;
-    setPressure(newPressure?.[0]);
+
+    return newPressure?.[0];
   }
 
   async function initialThermometherState() {
     const response = await axios.get(`/api/thermometers`);
     const newThermomether = response.data.data;
-    setThermomether(newThermomether?.[0]);
+
+    return newThermomether?.[0]
   }
 
   async function initialCalculatorState() {
     const response = await axios.get(`/api/calculators`);
     const newCalculator = response.data.data;
-    setCalculator(newCalculator?.[0]);
+
+    return newCalculator?.[0];
   }
 
   async function initialPowerUnitState() {
     const response = await axios.get(`/api/power-units`);
     const newPowerUnit = response.data.data;
-    setPowerUnit(newPowerUnit?.[0]);
+
+    return newPowerUnit?.[0];
   }
 
   useEffect(() => {
     if (user) {
-      initiaContractslState();
-      initialIndicationsState();
-      initialMeterState();
-      initialPressureState();
-      initialThermometherState();
-      initialCalculatorState();
-      initialPowerUnitState();
+      Promise.all([
+        initiaContractslState(),
+        initialIndicationsState(),
+        initialMeterState(),
+        initialPressureState(),
+        initialThermometherState(),
+        initialCalculatorState(),
+        initialPowerUnitState(),
+      ]).then((values) => {
+        const [newContracts, newIndications, newMeter, newPressure, newThermomether, newCalculator, newPowerUnit] = [...values];
+
+        setContracts(newContracts);
+        setIndications(newIndications);
+        setMeter(newMeter);
+        setPressure(newPressure);
+        setThermomether(newThermomether);
+        setCalculator(newCalculator);
+        setPowerUnit(newPowerUnit);
+
+      }).catch((error) => {
+        // обработка ошибок (нужно сделать какой то popup или что то такое для демонстрации пользователю об олшибке)
+        throw new Error(error);
+      });
+
     }
-    return () => {};
+    return () => { };
   }, [user]);
 
   return (
